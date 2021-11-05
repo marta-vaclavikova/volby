@@ -7,6 +7,11 @@ const App = () => {
   const [candidates, setCandidates] = useState([]);
   const [president, setPresident] = useState(null);
 
+  const onPresidentChange = (president) => {
+    console.log("asf"+president);
+    setPresident(president);
+  }
+
   useEffect(() => setCandidates([
     { name: "Ferdinand Mravenec", avatar: '/assets/candidate01.png' },
     { name: "Markéta Smetana", avatar: '/assets/candidate02.png' },
@@ -28,13 +33,14 @@ const App = () => {
         </div>
       </div>
       
-      <h2>Kandidátí</h2>
+      <h2>Kandidáti</h2>
       <div className="candidate-list">
         {candidates.map((c) => (
           <Candidate 
             key={c.name}
             name={c.name} 
             avatar={c.avatar} 
+            onPresidentChange={onPresidentChange}
           />
         ))}
       </div>
