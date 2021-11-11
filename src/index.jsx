@@ -8,7 +8,6 @@ const App = () => {
   const [president, setPresident] = useState(null);
 
   const onPresidentChange = (president) => {
-    console.log("asf"+president);
     setPresident(president);
   }
 
